@@ -9,78 +9,114 @@
 <body>
 
 <header class="header">
-         <div class="container header__container">
+    <div class="container header__container">
 
 
-             <div class="header-logo">
-                     <img src="./iconcs/Logo.png" alt="">
-             </div>
+        <div class="header-logo">
+            <img src="./iconcs/Logo.png" alt="">
+        </div>
 
-             <nav class="header-menu header_nav">
+        <nav class="header-menu header_nav">
 
-                     <a href="#" class="nav-link nav-link--active">О нас</a>
-                     <a href="#" class="nav-link">Услуги</a>
-                     <a href="#" class="nav-link">Вакансии</a>
-                     <a href="#" class="nav-link">Новости</a>
-                     <a href="#" class="nav-link">Соглашения</a>
+            <a href="#" class="nav-link nav-link--active">О нас</a>
+            <a href="#" class="nav-link">Услуги</a>
+            <a href="#" class="nav-link">Вакансии</a>
+            <a href="#" class="nav-link">Новости</a>
+            <a href="#" class="nav-link">Соглашения</a>
 
-             </nav>
+        </nav>
 
-             <div class="header-login">
-                 <a href="#" class="btn btn--ghost">ВОЙТИ</a>
-                 <a href="#" class="btn">ЗАРЕГИСТРИРОВАТЬСЯ</a>
-             </div>
+        <div class="header-login">
+            <a href="#" class="btn btn--ghost">ВОЙТИ</a>
+            <a href="#" class="btn">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+        </div>
 
-         </div>
+    </div>
 </header>
 
 <section id="section">
-    <div class="center">
-        <div class="container-section">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="formWrapper">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="3">ПРИБЫТИЕ</label>
-                                <input type="date" class="form-control" id="3" placeholder="Example input">
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="2">ВЫЕЗД</label>
-                                        <input type="date" class="form-control" id="2" placeholder="Example input">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="guests">ГОСТИ</label>
-                                            <select playsholder="Сколько гостей" name="guests" id="guests">
-                                                <option value="">взрослые</option>
-                                                <option value="">дети</option>
-                                                <option value="">младенцы</option>
-                                            </select>
-                                        </div>
-                                        </div>
-                                </div>
-                            </div>
-                                <button>подобрать номер</button>
-
-                        </form>
-
-                    </div>
-
-                </div>
-                <div class="col-sm-8">
-                    <h3>Лучшие номера для вашей работы, отдыха и просто вдохновения</h3>
-                </div>
+    <form class="center">
+        <h2>Найдём номера под ваши пожелания</h2>
+        <div class="row">
+            <div class="column">
+                <label>прибытие</label>
+                <input type="date" class="form-control"/>
+            </div>
+            <div class="column">
+                <label>выезд</label>
+                <input type="date" class="form-control"/>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <label for="guests">гости</label>
+            <select playsholder="Сколько гостей" name="guests" id="guests">
+                <option value="">взрослые</option>
+                <option value="">дети</option>
+                <option value="">младенцы</option>
+            </select>
+        </div>
+        <a href="#" class="btn btn--form">
+            <span>подобрать номер</span>
+            <img src="./iconcs/arrow_forward_white_24dp.svg">
+        </a>
+
+    </form>
 
 </section>
 
+<footer class="footer">
+    <div class="content">
+        <div class="footer__content">
+            <div class="logo">
+                <img src="./iconcs/Logo.png" alt="">
+                <div class="footer__info">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные
+                    взгляды»
+                </div>
+            </div>
+            <div>
+                <div class="footer__title">навигация</div>
+                <div class="footer__menu">
+                    <a href="#">О нас</a>
+                    <a href="#">Новости</a>
+                    <a href="#">Служба поддержки</a>
+                    <a href="#">Услуги</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer__title">о нас</div>
+                <div class="footer__menu">
+                    <a href="#">О сервисе</a>
+                    <a href="#">Наша команда</a>
+                    <a href="#">Вакансии</a>
+                    <a href="#">Инвесторы</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer__title">Служба поддержки</div>
+                <div class="footer__menu">
+                    <a href="#">Соглашения</a>
+                    <a href="#">Сообщества</a>
+                    <a href="#">Связаться с нами</a>
+                </div>
+            </div>
+            <div class="last__footer_div">
+                <div class="footer__title">Подписка</div>
+                <div class="row_wide_indent">Получайте специальные предложения и новости сервиса</div>
+                <form action=""></form>
+            </div>
+        </div>
+        <hr class="footer__line">
+        <div class="footer__copy">
+            <div class="footer_copyright">Copyright © 2018 Toxin отель. Все права защищены.</div>
+            <div class="footer__social">
+                <a href="#" class="footer__social-item"><img src="./img/twitter.png" alt="twitter"></a>
+                <a href="#" class="footer__social-item"><img src="./img/face.png" alt="facebook"></a>
+                <a href="#" class="footer__social-item"><img src="./img/inst.png" alt="inst"></a>
+            </div>
 
-
+        </div>
+    </div>
+</footer>
 
 
 </body>
