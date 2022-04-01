@@ -9,6 +9,10 @@
     --dark25:rgba(31, 32, 65, 0.25);
     --dark5:rgba(31, 32, 65, 0.05);
     --primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    /*Отсутпы*/
+    --form-indent: 16px;
+
 }
 /*Обнуление*/
 * ,
@@ -58,7 +62,7 @@ body{
 }
 .header{
     padding: 18px 140px;
-    max-width: 1440px;
+    width: 1440px;
 }
 
 .header__container{
@@ -69,7 +73,248 @@ body{
     width:105.69px;
     height: 40px;
     display: inline-block;
+    margin-right: 285px;
 }
+
+.form-style {
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid var(--dark25);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.text-internal-offset {
+    padding-left: var(--form-indent);
+}
+.pink-gradient-btn{
+    width: auto;
+    height: 34px;
+    left: 1104px;
+    top: 18px;
+    display: inline-block;
+    text-align: center;
+
+    /* Primary Gradient */
+    border-radius: 22px;
+    background: var(--primary-gradient);
+}
+.h-44px{
+    height: 44px;
+}
+.w-150px {
+    width: 150px;
+}
+.w-260px {
+    width: 260px;
+}
+.w-320px {
+    width: 320px;
+}
+.btn-radius {
+    border-radius: 22px;
+}
+.white-btn-cover {
+    height: 30px;
+    background: white center;
+    margin: 2px;
+}
+.text-style-form{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+.text-style-400{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+.text-style-700{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+.text-style-700-12{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+.text-style-700-14{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+}
+.text-style-400-14{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+.text-style-400-12{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+.text-style-700-14-17{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
+.text-style-700-12-15{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+.text-style-700-19-23{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 23px;
+}
+.text-style-700-14-24{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-inside-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-inside-btn-white {
+    display: inline-block;
+    padding: 8px 18px;
+}
+
+.text-color-white {
+    color: white;
+}
+
+.text-color-primary {
+    color: var(--primary);
+}
+
+.text-color-dark {
+    color: var(--dark);
+}
+
+.text-color-dark5 {
+    color: var(--dark5);
+}
+
+.text-color-dark25 {
+    color: var(--dark25);
+}
+
+.text-color-dark50 {
+    color: var(--dark50);
+}
+
+.text-color-dark75 {
+    color: var(--dark75);
+}
+
+.margin-between-20 + .margin-between-20 {
+    margin-left: 20px;
+}
+
+#section{
+    height: 915px;
+    background: url("../img/image 3.png") no-repeat;
+    background-size: cover;
+    width: 1440px;
+}
+.margin-vertical-between-21 + .margin-vertical-between-21{
+    margin-top: 21px;
+}
+
+.margin-top-31{
+    margin-top: 31px;
+}
+
+label{
+    height: 15px;
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color:var(--dark);
+    margin-bottom: 5px;
+}
+
+.tick::-webkit-calendar-picker-indicator  {
+    position: relative;
+    top:20px;
+    left: 22px;
+    opacity: 1;
+    display: block;
+    background: url("../iconcs/tik-grey.svg") no-repeat;
+    width: 44px;
+    height: 44px;
+    border-width: thin;
+    margin-left: -15px;
+}
+
+.select-tick {
+    appearance: none;
+    height: 50px;
+    background-image: url("../iconcs/tik-grey.svg");
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+
+.arrow_forward {
+    background-image: url("../iconcs/arrow_forward_white_24dp.svg");
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+
+.none-transform {
+    text-transform: none;
+}
+.arrow_forward-pink {
+    background-image: url("../iconcs/arrow_forward.svg");
+    background-repeat: no-repeat;
+    background-position: center right 15px;
+}
+.watermark{
+    position: absolute;
+    width: 297px;
+    height: 48px;
+    left: 1009px;
+    top: 926px;
+    text-align: right;
+}
+
 .nav-link{
     display: inline-block;
     line-height:17px;
@@ -77,7 +322,7 @@ body{
     margin:0 20px;
 }
 .header_nav{
-    margin-left: auto;
+    margin-left: 285px;
 }
 .nav-link--active{
     color:var(--dark);
@@ -97,26 +342,9 @@ body{
     border-radius: 22px;
 }
 
-.btn--ghost{
-    background-color:transparent;
-    color: var(--primary);
-}
-.header-login{
-    margin-left: 20px;
-}
-.header-login .btn + .btn {
-    margin-left: 20px;
-}
 
-/*HEADER2*/
+/*HEADER*/
 
-section{
-    height: 915px;
-    background: url("../img/image 3.png") no-repeat;
-    background-size: cover;
-    position: relative;
-    width: 1440px;
-}
 form.center{
     width: 380px;
     height: 374px;
@@ -126,24 +354,6 @@ form.center{
     transform: translateY(-50%);
     padding: 40px 30px;
     background: white;
-}
-
-form.center input, form.center select {
-    height: 44px;
-    background: #FFFFFF;
-    /* Dark 25% */
-
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
-}
-
-::placeholder {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
 }
 
 .formWrapper{
@@ -157,49 +367,28 @@ h2{
     line-height: 29px;
     color:var(--dark);
 }
-label{
-    height: 15px;
-    display: block;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color:var(--dark);
-}
-
 .column {
     width: 150px;
     display: inline-block;
 }
-
-.row {
-    margin: 25px 0;
-}
-
-.row + .btn {
-    margin-top: 10px;
+.column:not(:last-child) {
+    margin-right: 15px;
 }
 
 .btn--form {
     width: 320px;
     height: 44px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
-
     text-align: center;
     text-transform: uppercase;
-
 }
-
 .btn--form span {
     vertical-align: sub;
 }
-
 .btn--form span + img {
     float: right;
 }
@@ -239,10 +428,7 @@ label{
     height: 72px;
 }
 .footer__title{
-    font-weight: 700;
-    font-size: 12px;
-    margin-bottom:21px;
-    white-space: nowrap;
+    padding-bottom: 20px;
 }
 
 .last__footer_div {
@@ -252,6 +438,7 @@ label{
 .row_wide_indent {
     line-height: 1.8;
     margin-top: -1.7px;
+    margin-bottom: 20px;
 }
 
 .footer__menu a:not(:last-child){
@@ -274,9 +461,6 @@ label{
     align-items: center;
 }
 .footer_copyright{
-    color: var(--dark75);
-    font-size: 14px;
-    line-height: 17px;
     margin: 0 140px;
 }
 .footer__social{
@@ -288,11 +472,26 @@ label{
     margin-right:20px;
 }
 
-
-
-
-
-
+#email {
+    padding: .6em 2.6em .6em .3em;
+    vertical-align: middle;
+}
+#email[required] + label {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+#id[required] + label:before {
+    position: absolute;
+    left: -1.2em;
+    font-size: 23px;
+    color: rgb(238, 238, 238);
+}
+.img-left-offset {
+    position: relative;
+    right: 30px;
+    top: -2px;
+}
 
 
 

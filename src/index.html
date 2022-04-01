@@ -10,57 +10,52 @@
 
 <header class="header">
     <div class="container header__container">
-
-
         <div class="header-logo">
             <img src="./iconcs/Logo.png" alt="">
         </div>
-
-        <nav class="header-menu header_nav">
-
-            <a href="#" class="nav-link nav-link--active">О нас</a>
-            <a href="#" class="nav-link">Услуги</a>
-            <a href="#" class="nav-link">Вакансии</a>
-            <a href="#" class="nav-link">Новости</a>
-            <a href="#" class="nav-link">Соглашения</a>
-
-        </nav>
-
-        <div class="header-login">
-            <a href="#" class="btn btn--ghost">ВОЙТИ</a>
-            <a href="#" class="btn">ЗАРЕГИСТРИРОВАТЬСЯ</a>
-        </div>
-
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">О нас</a>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Услуги</a>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Вакансии</a>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Новости</a>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Соглашения</a>
+        <a href="#" class="btn-radius pink-gradient-btn margin-between-20">
+            <div class="btn-radius white-btn-cover">
+                <span class="text-style-700-12-15 text-color-primary text-inside-btn-white">ВОЙТИ</span>
+            </div>
+        </a>
+        <a href="#" class="btn-radius pink-gradient-btn margin-between-20">
+            <span class="text-style-700-12-15 text-color-white text-inside-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+        </a>
     </div>
 </header>
 
 <section id="section">
     <form class="center">
-        <h2>Найдём номера под ваши пожелания</h2>
-        <div class="row">
+        <h2 class="text-style-700 text-color-dark margin-vertical-between-21">Найдём номера под ваши пожелания</h2>
+        <div class="row margin-vertical-between-21">
             <div class="column">
                 <label>прибытие</label>
-                <input type="date" class="form-control"/>
+                <input type="date" class="form-style w-150px text-style-form text-color-dark75 tick" />
             </div>
             <div class="column">
                 <label>выезд</label>
-                <input type="date" class="form-control"/>
+                <input type="date" class="form-style w-150px text-style-form text-color-dark75 tick"/>
             </div>
         </div>
-        <div class="row">
-            <label for="guests">гости</label>
-            <select playsholder="Сколько гостей" name="guests" id="guests">
+        <div class="row margin-vertical-between-21">
+            <label>гости</label>
+            <select name="guests" class="form-style select-tick w-320px text-style-form text-color-dark75 none-transform" required>
+                <option class="" value="" disabled selected hidden>Сколько гостей</option>
                 <option value="">взрослые</option>
                 <option value="">дети</option>
                 <option value="">младенцы</option>
             </select>
         </div>
-        <a href="#" class="btn btn--form">
-            <span>подобрать номер</span>
-            <img src="./iconcs/arrow_forward_white_24dp.svg">
+        <a href="#" class="btn-radius pink-gradient-btn margin-between-20 w-320px h-44px margin-top-31">
+            <span class="text-style-700-12-15 text-color-white text-inside-btn arrow_forward">ПОДОБРАТЬ НОМЕР</span>
         </a>
-
     </form>
+    <div class="watermark text-style-400-14 text-color-dark75">Лучшие номера для вашей работы, отдыха и просто вдохновения</div>
 
 </section>
 
@@ -69,13 +64,13 @@
         <div class="footer__content">
             <div class="logo">
                 <img src="./iconcs/Logo.png" alt="">
-                <div class="footer__info">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные
+                <div class="footer__info text-style-400-14 text-color-dark75">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные
                     взгляды»
                 </div>
             </div>
             <div>
-                <div class="footer__title">навигация</div>
-                <div class="footer__menu">
+                <div class="footer__title text-style-700-12 text-color-dark">навигация</div>
+                <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">О нас</a>
                     <a href="#">Новости</a>
                     <a href="#">Служба поддержки</a>
@@ -83,8 +78,8 @@
                 </div>
             </div>
             <div>
-                <div class="footer__title">о нас</div>
-                <div class="footer__menu">
+                <div class="footer__title text-style-700-12 text-color-dark">о нас</div>
+                <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">О сервисе</a>
                     <a href="#">Наша команда</a>
                     <a href="#">Вакансии</a>
@@ -92,28 +87,29 @@
                 </div>
             </div>
             <div>
-                <div class="footer__title">Служба поддержки</div>
-                <div class="footer__menu">
+                <div class="footer__title text-style-700-12 text-color-dark">Служба поддержки</div>
+                <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">Соглашения</a>
                     <a href="#">Сообщества</a>
                     <a href="#">Связаться с нами</a>
                 </div>
             </div>
             <div class="last__footer_div">
-                <div class="footer__title">Подписка</div>
+                <div class="footer__title text-style-700-12 text-color-dark">Подписка</div>
                 <div class="row_wide_indent">Получайте специальные предложения и новости сервиса</div>
-                <form action=""></form>
+                <form>
+                    <input type="email" placeholder="Email" class="form-style w-260px text-style-form text-color-dark75 arrow_forward-pink none-transform"/>
+                </form>
             </div>
         </div>
         <hr class="footer__line">
         <div class="footer__copy">
-            <div class="footer_copyright">Copyright © 2018 Toxin отель. Все права защищены.</div>
+            <div class="footer_copyright text-style-400 text-color-dark75">Copyright © 2018 Toxin отель. Все права защищены.</div>
             <div class="footer__social">
                 <a href="#" class="footer__social-item"><img src="./img/twitter.png" alt="twitter"></a>
                 <a href="#" class="footer__social-item"><img src="./img/face.png" alt="facebook"></a>
                 <a href="#" class="footer__social-item"><img src="./img/inst.png" alt="inst"></a>
             </div>
-
         </div>
     </div>
 </footer>
