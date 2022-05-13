@@ -345,7 +345,7 @@ div.label-radio label {
     width: 20px;
     height: 13px;
     vertical-align: middle;
-    margin-left: 25px;
+    margin-left: 78px;
 }
 .tick::-webkit-calendar-picker-indicator  {
     position: relative;
@@ -467,6 +467,8 @@ div.label-radio label {
 
 /*Счетчик*/
 .guests-choice{
+    display: none;
+    z-index: 2;
     position: absolute;
     width: 320px;
     height: 159px;
@@ -477,6 +479,8 @@ div.label-radio label {
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 }
 .choice-comfort{
+    display: none;
+    z-index: 2;
     position: absolute;
     width: 320px;
     height: 119px;
@@ -599,7 +603,7 @@ form.center-login{
     margin-right: 15px;
 }
 
-/*Footer*/
+/*App_footer*/
 
 .footer{
     padding: 104px 0 26px;
@@ -856,7 +860,7 @@ form.center-login{
     border: 2px solid #FFFFFF;
     border-radius: 10px;
     left: 217px;
-    top: 293px
+    top: 293px;
 }
 .range-2{
     position: absolute;
@@ -874,7 +878,7 @@ form.center-login{
     border: 2px solid #FFFFFF;
     border-radius: 10px;
     left: 307px;
-    top: 293px
+    top: 293px;
 }
 .check-box-w{
     display: inline-block;
@@ -893,7 +897,7 @@ form.center-login{
     position: absolute;
     width: 1440px;
     left: 0;
-    top: 1535px;
+    top: 1608px;
     border:0;
     border-top:2px solid var(--dark5);
 }
