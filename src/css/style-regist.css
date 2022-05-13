@@ -160,13 +160,6 @@ body{
     font-size: 14px;
     line-height: 17px;
 }
-.text-style-400-14-14{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
-}
 .text-style-700{
     font-family: 'Montserrat';
     font-style: normal;
@@ -302,9 +295,6 @@ body{
 }
 .margin-top-31{
     margin-top: 31px;
-}
-.margin-top-29{
-    margin-top: 29px;
 }
 .margin-top-30{
     margin-top: 61px;
@@ -465,65 +455,44 @@ div.label-radio label {
 }
 /*===========================================================*/
 
-/*Счетчик*/
-.guests-choice{
-    position: absolute;
-    width: 320px;
-    height: 159px;
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    padding: 13px 7px 13px 15px;
-    box-sizing: border-box;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-}
-.choice-comfort{
-    position: absolute;
-    width: 320px;
-    height: 119px;
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    padding: 13px 7px 13px 15px;
-    box-sizing: border-box;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-}
-.guest-line{
-    width: 100%;
-}
-.btn-minus{
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 22px;
-    background: #FFFFFF;
-}
-.btn-plus{
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 22px;
-    background: #FFFFFF;
-}
-.counter{
-    float: right;
-}
-.border-counter{
-    outline:none;
-    border: 0;
-    width: 23px;
-    text-align: center;
-    margin-right: -15px;
-}
-.apply{
-    float: right;
-}
-.pad{
-    padding-top: 15px;
-}
+/*Переключатель*/
 
-/*RADIO*/
 
+.switch {
+    display: inline-block;
+    position: relative;
+    text-align: center
+}
+input[type="checkbox"]{
+    width: 40px;
+    height: 20px;
+    outline: none;
+    -webkit-appearance: none;
+    background: white;
+    transition: .5s;
+    border: 1px solid var(--dark25);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+input:checked[type="checkbox"]{
+    background:white;
+}
+input[type="checkbox"]:before{
+    content:'';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: scale(1.1);
+    border-radius: 10px;
+    top: 4px;
+    left: 3px;
+    background:var(--dark25);
+    transition: .9s;
+}
+input:checked[type="checkbox"]:before{
+    background: var(--primary-gradient);
+    left:23px;
+}
 .label-radio input[type=radio] {
     display: none;
 }
@@ -550,9 +519,6 @@ label.switch > span {
     position: relative;
     bottom: 5px;
 }
-
-
-
 
 /*HEADER*/
 
@@ -675,423 +641,3 @@ form.center-login{
     right: 30px;
     top: -2px;
 }
-
-/*Search page*/
-
-#section--search{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 1440px;
-    height: 1357px;
-    /*background: #FFFFFF;*/
-}
-.search-filter{
-    /*background-color: white;*/
-    min-height: 90vh;
-    padding: 30px 60px 0 140px;
-}
-.catalog-apartments{
-    flex: 1 0 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    padding-top: 30px;
-}
-.apartment-card {
-    display: flex;
-    flex-direction: row;
-    width: 270px;
-    height: 257px;
-    background: #FFFFFF;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-    margin-right: 12px;
-    margin-top: 12px;
-}
-.apartment-img{
-    width: 270px;
-    height: 157px;
-}
-.apartment-arrow-left{
-    position: relative;
-    bottom: 86px;
-    left: 17px;
-    width: 10px;
-}
-.apartment-arrow-right{
-    position: relative;
-    bottom: 86px;
-    width: 10px;
-    right: -228px;
-}
-.apartment-card_inside{
-    flex: 1;
-}
-.apartment-card_info{
-    margin: 10px 16px 19px 20px;
-    display: grid;
-    grid-template-columns: repeat(1, 83px);
-    grid-template-rows: repeat(1,10px);
-    height: 67px;
-    width: 233px;
-    grid-gap:5px;
-    grid-template-areas:
-    "a a b"
-    "c c c"
-    "d d e";
-    align-content: space-between;
-    justify-content: space-around;
-}
-.number {
-    grid-area: a;
-    height: 24px;
-}
-.price{
-    grid-area: b;
-}
-.line-card{
-    grid-area: c;
-    padding-top: 10px;
-}
-.star{
-    grid-area: d;
-}
-.comments{
-    grid-area: e;
-    padding-left: 17px;
-}
-.header-catalog{
-    width: 100%;
-}
-
-.apartment-img-border{
-    border-radius: 4px 4px 0 0;
-}
-/*Пагинация*/
-
-.pagination {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items:center;
-    align-content: center ;
-    justify-content: center;
-    margin-top:41px;
-}
-.pagination .current-page {
-    color: white;
-    height: 41px;
-    background: url("../iconcs/Rectangle-primary.svg") center no-repeat;
-}
-.btn-next{
-    height: 41px;
-    width: 40px;
-    background: url("../iconcs/btn-next.png") center no-repeat;
-    background-size: 41px 40px;
-}
-.pagination-text {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items:center;
-    align-content: center ;
-    justify-content: center;
-    margin-top:10px;
-}
-
-
-.option{
-    display: block;
-}
-.check_input{
-    position: absolute;
-    -webkit-appearance: none;
-    appearance: none;
-}
-.check_box{
-    position: absolute;
-    height:20px;
-    padding-left: 28px;
-    background: url("../iconcs/checkbox-border.svg")no-repeat;
-}
-.check_input:checked + .check_box{
-    background: url("../iconcs/ckeckbox.png") no-repeat;
-    background-size: 20px 20px;
-}
-.check-text{
-    display: block;
-    width: 236px;
-    height: 28px;
-    margin-left: 28px;
-}
-
-.float-left {
-    float: left;
-}
-
-.clear {
-    clear: both;
-    width: 266px;
-    height: 12px;
-}
-.range-1{
-    position: absolute;
-    width: 266px;
-    height: 6px;
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 3px;
-}
-.rectangle-1{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border: 2px solid #FFFFFF;
-    border-radius: 10px;
-    left: 217px;
-    top: 293px
-}
-.range-2{
-    position: absolute;
-    width: 88px;
-    height: 6px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 3px;
-    left: 222px;
-}
-.rectangle-2{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border: 2px solid #FFFFFF;
-    border-radius: 10px;
-    left: 307px;
-    top: 293px
-}
-.check-box-w{
-    display: inline-block;
-    width: 240px;
-    line-height: 18px;
-    padding-top: 3px;
-}
-.line-end{
-    position: absolute;
-    width: 1440px;
-    top: 1427px;
-    border:0;
-    border-top:2px solid var(--dark5);
-}
-.line-end-apart{
-    position: absolute;
-    width: 1440px;
-    left: 0;
-    top: 1535px;
-    border:0;
-    border-top:2px solid var(--dark5);
-}
-
-/*Apartment Page*/
-#section-photo {
-    width: 1440px;
-    height: 486px;
-}
-.first-block{
-    position: relative;
-    width: 980px;
-    height: 486px;
-}
-.img-apartment-page{
-    width: 980px;
-    height: 486px;
-}
-.second-block{
-    position: absolute;
-    width: 460px;
-    height: 243px;
-    left: 980px;
-    top: 77px;
-}
-.third-block{
-    position: absolute;
-    width: 461px;
-    height: 243px;
-    left: 980px;
-    top: 319.5px;
-}
-
-#section-inform{
-    width: 1440px;
-    height: 939px;
-    padding: 70px 140px;
-}
-.room-information{
-    max-width: 673px;
-}
-.room-gen{
-    display: inline-block;
-    max-width: 291px;
-}
-.room-feeling{
-    display: inline-block;
-    margin-left: 83px;
-    vertical-align: 61px;
-}
-.feeling-box{
-    display: inline-block;
-    max-width: 311px;
-}
-
-.comfort{
-    display: inline-block;
-    width: 233px;
-    height: 48px;
-    position: absolute;
-}
-.line-box{
-    display: inline-block;
-}
-.all-comment{
-    text-align: right;
-    margin-left: 347px;
-}
-.img-icons{
-    width: 48px;
-    height: 48px;
-}
-.comment-box-2{
-    width: 716px;
-}
-.comment-box{
-    max-width: 716px;
-}
-.boon,
-.cosiness,
-.comments-name{
-    display: inline-block;
-    width: 222px;
-    height: 48px;
-    position: absolute;
-    margin-top: 5px;
-}
-.comments-text{
-    width: 653px;
-    height: 72px;
-    position: relative;
-    margin-left: 58px;
-}
-
-
-
-.last-info{
-    max-width: 711px;
-}
-.rules{
-    display: inline-block;
-    max-width: 264px;
-}
-.cancel{
-    display: inline-block;
-    max-width: 341px;
-    margin-left: 95px;
-    vertical-align: 21px;
-}
-
-
-
-.apartment-form{
-    position: absolute;
-    width: 380px;
-    height: 512px;
-    left: 920px;
-    top: 625px;
-    padding: 40px 30px 30px 30px;
-
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-.form-price_calculation {
-    width: 68%;
-    float: left;
-}
-.form-price {
-    width: 25%;
-    float: right;
-    text-align: right;
-}
-.form-price_calculation-1{
-    width: 20%;
-    float: left;
-}
-.form-price-1{
-    width: 60%;
-    float: right;
-    text-align: right;
-}
-.btn-i{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-}
-.results-line{
-    margin-left: 61px;
-    margin-top: -32px;
-    width: 83%;
-}
-
-#d1{
-    display: inline-block;
-    width: 120px;
-    height: 120px;
-    background: url("../iconcs/apartmen-page/Ellipse.png") no-repeat;
-}
-#s1,
-#s2{
-    display: table-cell;
-    width: 60px;
-    height: 120px;
-}
-.ids2{
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-}
-.vote{
-    display: grid;
-    position: relative;
-    text-align: center;
-    bottom: 85px;
-}
-
-.feeling-text{
-    display: inline-block;
-    width: 160px;
-    height: 96px;
-    margin-left: 21px;
-    vertical-align: 32px;
-}
-.dv{
-    color: #d3d3d3;
-    color:  #4CAF50;
-    color:#4CAF50;
-}
-
-
-
-
-
-
-
-
-
-
-

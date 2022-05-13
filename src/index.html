@@ -14,14 +14,16 @@
             <img src="./iconcs/Logo.png" alt="">
         </div>
         <a href="#" class="text-style-400 text-color-dark50 margin-between-20">О нас</a>
-        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Услуги</a>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Услуги
+            <div class="tick-header"></div>
+        </a>
         <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Вакансии</a>
         <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Новости</a>
-        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Соглашения</a>
-        <a href="#" class="btn-radius pink-gradient-btn margin-between-20">
-            <div class="btn-radius white-btn-cover">
-                <span class="text-style-700-12-15 text-color-primary text-inside-btn-white">ВОЙТИ</span>
-            </div>
+        <a href="#" class="text-style-400 text-color-dark50 margin-between-20">Соглашения
+            <div class="tick-header"></div>
+        </a>
+        <a href="#" class="btn-radius pink-border-gradient-btn h34-w87-image margin-between-20">
+            <span class="text-style-700-12-15 text-color-primary line-height-34">ВОЙТИ</span>
         </a>
         <a href="#" class="btn-radius pink-gradient-btn margin-between-20">
             <span class="text-style-700-12-15 text-color-white text-inside-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
@@ -44,12 +46,46 @@
         </div>
         <div class="row margin-vertical-between-21">
             <label>гости</label>
-            <select name="guests" class="form-style select-tick w-320px text-style-form text-color-dark75 none-transform" required>
-                <option class="" value="" disabled selected hidden>Сколько гостей</option>
-                <option value="">взрослые</option>
-                <option value="">дети</option>
-                <option value="">младенцы</option>
-            </select>
+            <div class="form-style select-tick w-320px text-style-form text-color-dark75 none-transform pad" required>
+                <span>Сколько гостей</span>
+            </div>
+            <div class="guests-choice">
+                <div class="guest-line margin-vertical-between-21">
+                    <span class="name-guests text-style-700-12 text-transform">Взрослые</span>
+
+                    <span class="counter">
+                            <button class="btn-minus">-</button>
+                            <input type="number" value="2" readonly min="0" max="10" class="border-counter">
+                            <button class="btn-plus">+</button>
+                    </span>
+
+                </div>
+                <div class="guest-line margin-vertical-between-21">
+                    <span class="name-guests text-style-700-12 text-transform">Дети</span>
+
+                        <span class="counter">
+                            <button class="btn-minus">-</button>
+                            <input type="number" value="1" readonly min="0" max="10" class="border-counter">
+                            <button class="btn-plus">+</button>
+                        </span>
+
+                </div>
+                <div class="guest-line margin-vertical-between-21">
+                    <span class="name-guests text-style-700-12 text-transform">Младенцы</span>
+
+                        <span class="counter">
+                            <button class="btn-minus">-</button>
+                            <input type="number" value="0" readonly min="0" max="10" class="border-counter">
+                            <button class="btn-plus">+</button>
+                        </span>
+
+                </div>
+                <div class="text-style-700-12 text-transform text-color-primary margin-top-29">
+                    <span class="clear">Очистить</span>
+                    <span class="apply">Применить</span>
+                </div>
+            </div>
+
         </div>
         <a href="#" class="btn-radius pink-gradient-btn margin-between-20 w-320px h-44px margin-top-31">
             <span class="text-style-700-12-15 text-color-white text-inside-btn arrow_forward">ПОДОБРАТЬ НОМЕР</span>
@@ -64,12 +100,13 @@
         <div class="footer__content">
             <div class="logo">
                 <img src="./iconcs/Logo.png" alt="">
-                <div class="footer__info text-style-400-14 text-color-dark75">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные
+                <div class="footer__info text-style-400-14 text-color-dark75">Бронирование номеров в лучшем отеле 2019
+                    года по версии ассоциации «Отельные
                     взгляды»
                 </div>
             </div>
             <div>
-                <div class="footer__title text-style-700-12 text-color-dark">навигация</div>
+                <div class="footer__title text-style-700-12 text-color-dark text-transform">навигация</div>
                 <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">О нас</a>
                     <a href="#">Новости</a>
@@ -78,7 +115,7 @@
                 </div>
             </div>
             <div>
-                <div class="footer__title text-style-700-12 text-color-dark">о нас</div>
+                <div class="footer__title text-style-700-12 text-color-dark text-transform">о нас</div>
                 <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">О сервисе</a>
                     <a href="#">Наша команда</a>
@@ -87,7 +124,7 @@
                 </div>
             </div>
             <div>
-                <div class="footer__title text-style-700-12 text-color-dark">Служба поддержки</div>
+                <div class="footer__title text-style-700-12 text-color-dark text-transform">Служба поддержки</div>
                 <div class="footer__menu text-style-400 text-color-dark50">
                     <a href="#">Соглашения</a>
                     <a href="#">Сообщества</a>
@@ -95,16 +132,19 @@
                 </div>
             </div>
             <div class="last__footer_div">
-                <div class="footer__title text-style-700-12 text-color-dark">Подписка</div>
+                <div class="footer__title text-style-700-12 text-color-dark text-transform">Подписка</div>
                 <div class="row_wide_indent">Получайте специальные предложения и новости сервиса</div>
                 <form>
-                    <input type="email" placeholder="Email" class="form-style w-260px text-style-form text-color-dark75 arrow_forward-pink none-transform"/>
+                    <input type="email" placeholder="Email"
+                           class="form-style w-260px text-style-form text-color-dark75 arrow_forward-pink none-transform"/>
                 </form>
             </div>
         </div>
         <hr class="footer__line">
         <div class="footer__copy">
-            <div class="footer_copyright text-style-400 text-color-dark75">Copyright © 2018 Toxin отель. Все права защищены.</div>
+            <div class="footer_copyright text-style-400 text-color-dark75">Copyright © 2018 Toxin отель. Все права
+                защищены.
+            </div>
             <div class="footer__social">
                 <a href="#" class="footer__social-item"><img src="./img/twitter.png" alt="twitter"></a>
                 <a href="#" class="footer__social-item"><img src="./img/face.png" alt="facebook"></a>
