@@ -1,15 +1,17 @@
 import React from 'react';
+import Carousel from "nuka-carousel";
 
 
 class Apartment extends React.Component {
-    img;
+    images;
     price;
     id;
     stars;
     comments;
+
     constructor(props) {
         super(props);
-        this.img = props.img;
+        this.images = props.images;
         this.price = props.price;
         this.id = props.id;
         this.stars = props.stars;
@@ -31,14 +33,15 @@ class Apartment extends React.Component {
 
 
     render() {
-        // return <h1>Привет, {this.props.name}</h1>;
+
         return <div className="apartment-card">
             <div className="apartment-card_inside">
                 <div className="apartment-img">
-                    <a href="#">
-                        <img className="apartment-img-border" src={"./apartments/" + this.img + ".png"}
-                             alt="apartments"/>
-                    </a>
+                    <Carousel>
+                        {this.images.map(a => (
+                            <img src={"./apartments/" + a + ".png"}/>
+                        ))}
+                    </Carousel>
                     <img className="apartment-arrow-left" src="./iconcs/arrow_left.svg" alt="arrow_left"/>
                     <img className="apartment-arrow-right" src="./iconcs/arrow_right.svg" alt="arrow_right"/>
                 </div>
