@@ -1089,9 +1089,16 @@ form.center-login{
     color:#4CAF50;
 }
 
+.slider-container .slider-control-centerleft button {
+   opacity: 0 !important;
+}
+.slider-container .slider-control-centerright button {
+    opacity: 0 !important;
+}
 
+#apartments {
 
-
+}
 
 
 

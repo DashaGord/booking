@@ -3,19 +3,9 @@ import Carousel from "nuka-carousel";
 
 
 class Apartment extends React.Component {
-    images;
-    price;
-    id;
-    stars;
-    comments;
-
     constructor(props) {
         super(props);
-        this.images = props.images;
-        this.price = props.price;
-        this.id = props.id;
-        this.stars = props.stars;
-        this.comments = props.comments;
+        this.appModel = props.appModel;
     }
 
 
@@ -28,17 +18,16 @@ class Apartment extends React.Component {
         for (let i = 0; i < x; i++) {
             content.push(<img src="./iconcs/star_border.png" alt=""/>);
         }
-        return content
+        return content;
     }
 
 
     render() {
-
         return <div className="apartment-card">
             <div className="apartment-card_inside">
                 <div className="apartment-img">
                     <Carousel>
-                        {this.images.map(a => (
+                        {this.appModel.images.map(a => (
                             <img src={"./apartments/" + a + ".png"}/>
                         ))}
                     </Carousel>
@@ -46,18 +35,18 @@ class Apartment extends React.Component {
                     <img className="apartment-arrow-right" src="./iconcs/arrow_right.svg" alt="arrow_right"/>
                 </div>
                 <div className="apartment-card_info">
-                    <div className="number text-style-700-14-17 text-color-dark">№ {this.id}</div>
-                    <div className="price text-style-700-14 text-color-dark50">{this.price}₽ <span
+                    <div className="number text-style-700-14-17 text-color-dark">№ {this.appModel.id}</div>
+                    <div className="price text-style-700-14 text-color-dark50">{this.appModel.avg_price}₽ <span
                         className="text-style-400 text-color-dark50 none-transform">в сутки</span></div>
                     <div className="line-card"><img src="./iconcs/line.svg" alt=""/></div>
                     <div className="star">
                         <div className="rating-mini">
                             {
-                                this.getStars(this.stars)
+                                this.getStars(this.appModel.stars)
                             }
                         </div>
                     </div>
-                    <div className="comments text-style-700-14 text-color-dark50">{this.comments} <span
+                    <div className="comments text-style-700-14 text-color-dark50">{this.appModel.comments} <span
                         className="text-style-400 text-color-dark50 none-transform">Отзывов</span></div>
                 </div>
             </div>

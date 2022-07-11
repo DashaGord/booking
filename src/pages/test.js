@@ -1,27 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Apartment from "../components/Apartment/Apartment";
-import {AppModel} from "../Model/AppModel";
+import AvailableRoomsService from "../services/AvailableRoomsService";
+import {createRoot} from 'react-dom/client';
 
-const TestPage = () => {
+
+const availableRoomsService = new AvailableRoomsService();
 
 
-    const response = [
-        new AppModel([1,3,5], 9900, 888, 5 , 52 ),
-        new AppModel([2,4,6], 5800, 654, 4 , 123 ),
-        new AppModel([3,4,6], 6900, 658, 3 , 152 ),
-        new AppModel([4,3,5], 7900, 666, 5 , 72 ),
-        new AppModel([5,3,5], 9500, 723, 4 , 62 ),
-        new AppModel([6,1,5], 9300, 321, 3 , 80 ),
-        new AppModel([7,11,5], 5200, 852, 5 , 49 ),
-        new AppModel([8,2,5], 6400, 838, 3 , 53 ),
-        new AppModel([9,7,5], 9900, 896, 4 , 85 ),
-        new AppModel([10,9,5], 8900, 588, 5 , 96 ),
-        new AppModel([11,10,5], 7900, 788, 4 , 100 ),
-        new AppModel([12,7,8], 6900, 458, 5 , 73 ),
-    ]
+class TestPage extends Component {
+    constructor(props) {
+        super(props);
+        availableRoomsService.getAvailableRooms().then(res => {
+            const div = document.getElementById("apartments");
+            const root = createRoot(div);
+            const children = res.appModels.map((a) => (
+                React.createElement(Apartment, {appModel: a})
+            ));
+            root.render(children);
+        });
+    }
 
-    return (
-        <section id="section--search">
+    render() {
+        return <section id="section--search">
             <aside>
                 <form action="" className="search-filter">
 
@@ -71,7 +71,8 @@ const TestPage = () => {
                     </div>
 
 
-                    <label className="text-style-700-12-15 text-color-dark float-left margin-between-40 margin-top-10">диапазон
+                    <label
+                        className="text-style-700-12-15 text-color-dark float-left margin-between-40 margin-top-10">диапазон
                         цены</label>
                     <span id="prices-label"
                           className="float-left margin-between-40 text-style-pagination text-color-dark50 margin-top-10"><span
@@ -178,24 +179,9 @@ const TestPage = () => {
             </aside>
 
             <div className="catalog-apartments">
-                <h2 className="text-color-dark text-style-700 header-catalog">Номера, которые мы для вас подобрали</h2>
-
-
-                {response.map(a => (
-                         <Apartment images={a.img} price={a.price} id={a.id} stars={a.stars} comments={a.comments}/>
-                    ))}
-                {/*<Apartment img={1} price={9900} id={888} stars={5} comments={52}/>*/}
-                {/*<Apartment img={2} price={5800} id={654} stars={4} comments={123}/>*/}
-                {/*<Apartment img={3} price={6900} id={658} stars={3} comments={152}/>*/}
-                {/*<Apartment img={4} price={7900} id={666} stars={5} comments={72}/>*/}
-                {/*<Apartment img={5} price={9500} id={723} stars={4} comments={62}/>*/}
-                {/*<Apartment img={6} price={9300} id={321} stars={3} comments={80}/>*/}
-                {/*<Apartment img={7} price={5200} id={852} stars={5} comments={49}/>*/}
-                {/*<Apartment img={8} price={6400} id={838} stars={3} comments={53}/>*/}
-                {/*<Apartment img={9} price={9900} id={896} stars={4} comments={85}/>*/}
-                {/*<Apartment img={10} price={8900} id={588} stars={5} comments={96}/>*/}
-                {/*<Apartment img={11} price={7900} id={788} stars={4} comments={100}/>*/}
-                {/*<Apartment images={newVar.img} price={6900} id={458} stars={5} comments={73}/>*/}
+                <h2 className="text-color-dark text-style-700 header-catalog">Номера, которые мы для вас
+                    подобрали</h2>
+                <div id="apartments"/>
 
 
                 <div className="pagination">
@@ -219,12 +205,13 @@ const TestPage = () => {
                         <span className="next">&nbsp;</span>
                     </a>
                 </div>
-                <h4 className="pagination-text text-style-400-14 text-color-dark75">1 – 12 из 100+ вариантов аренды</h4>
+                <h4 className="pagination-text text-style-400-14 text-color-dark75">1 – 12 из 100+ вариантов
+                    аренды</h4>
             </div>
             <hr className="line-end"/>
 
         </section>
-    );
-};
+    };
+}
 
 export default TestPage;

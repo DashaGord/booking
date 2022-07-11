@@ -163,18 +163,18 @@ const SearchForm = () => {
                 <h2 className="text-color-dark text-style-700 header-catalog">Номера, которые мы для вас подобрали</h2>
 
 
-                <Apartment img={1} price={9900} id={888} stars={5} comments={52}/>
-                <Apartment img={2} price={5800} id={654} stars={4} comments={123}/>
-                <Apartment img={3} price={6900} id={658} stars={3} comments={152}/>
-                <Apartment img={4} price={7900} id={666} stars={5} comments={72}/>
-                <Apartment img={5} price={9500} id={723} stars={4} comments={62}/>
-                <Apartment img={6} price={9300} id={321} stars={3} comments={80}/>
-                <Apartment img={7} price={5200} id={852} stars={5} comments={49}/>
-                <Apartment img={8} price={6400} id={838} stars={3} comments={53}/>
-                <Apartment img={9} price={9900} id={896} stars={4} comments={85}/>
-                <Apartment img={10} price={8900} id={588} stars={5} comments={96}/>
-                <Apartment img={11} price={7900} id={788} stars={4} comments={100}/>
-                <Apartment img={12} price={6900} id={458} stars={5} comments={73}/>
+                {/*<Apartment img={1} price={9900} id={888} stars={5} comments={52}/>*/}
+                {/*<Apartment img={2} price={5800} id={654} stars={4} comments={123}/>*/}
+                {/*<Apartment img={3} price={6900} id={658} stars={3} comments={152}/>*/}
+                {/*<Apartment img={4} price={7900} id={666} stars={5} comments={72}/>*/}
+                {/*<Apartment img={5} price={9500} id={723} stars={4} comments={62}/>*/}
+                {/*<Apartment img={6} price={9300} id={321} stars={3} comments={80}/>*/}
+                {/*<Apartment img={7} price={5200} id={852} stars={5} comments={49}/>*/}
+                {/*<Apartment img={8} price={6400} id={838} stars={3} comments={53}/>*/}
+                {/*<Apartment img={9} price={9900} id={896} stars={4} comments={85}/>*/}
+                {/*<Apartment img={10} price={8900} id={588} stars={5} comments={96}/>*/}
+                {/*<Apartment img={11} price={7900} id={788} stars={4} comments={100}/>*/}
+                {/*<Apartment img={12} price={6900} id={458} stars={5} comments={73}/>*/}
 
 
                 <div className="pagination">

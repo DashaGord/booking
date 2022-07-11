@@ -11,6 +11,8 @@ import Login from './pages/login';
 import Registration from './pages/registration/registration';
 import TestPage from './pages/test';
 
+
+
 function App() {
     return (
         <Router>
