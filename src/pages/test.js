@@ -1,22 +1,23 @@
 import React, {Component} from 'react';
-import Apartment from "../components/Apartment/Apartment";
 import AvailableRoomsService from "../services/AvailableRoomsService";
-import {createRoot} from 'react-dom/client';
+import ModelPagination from "../components/Pagination/ModelPagination";
+import ApartmentsList from "../components/ApartmentsList";
 
 
 const availableRoomsService = new AvailableRoomsService();
 
-
 class TestPage extends Component {
     constructor(props) {
         super(props);
+        this.appListRef = React.createRef();
+        this.paginationRef = React.createRef();
+    }
+
+    componentDidMount() {
         availableRoomsService.getAvailableRooms().then(res => {
-            const div = document.getElementById("apartments");
-            const root = createRoot(div);
-            const children = res.appModels.map((a) => (
-                React.createElement(Apartment, {appModel: a})
-            ));
-            root.render(children);
+            this.appListRef.current.setState({apartments: res.appModels});
+            const count = res.count;
+            this.paginationRef.current.setState({count: count});
         });
     }
 
@@ -181,29 +182,31 @@ class TestPage extends Component {
             <div className="catalog-apartments">
                 <h2 className="text-color-dark text-style-700 header-catalog">Номера, которые мы для вас
                     подобрали</h2>
-                <div id="apartments"/>
+                <ApartmentsList ref={this.appListRef}/>
 
 
-                <div className="pagination">
+                <div id="pagination">
+                    <ModelPagination ref={this.paginationRef}/>
 
-                    <div href="#" className="current-page">
-                        <span className="text-style-pagination text-color-white text-inside-btn">1</span>
-                    </div>
-                    <a href="#" className="">
-                        <span className="text-style-pagination text-color-dark50 text-inside-btn">2</span>
-                    </a>
-                    <a href="#" className="">
-                        <span className="text-style-pagination text-color-dark50 text-inside-btn">3</span>
-                    </a>
-                    <a href="#" className="">
-                        <span className="text-style-pagination text-color-dark50 text-inside-btn">...</span>
-                    </a>
-                    <a href="#" className="">
-                        <span className="text-style-pagination text-color-dark50 text-inside-btn">15</span>
-                    </a>
-                    <a href="#" className="btn-next">
-                        <span className="next">&nbsp;</span>
-                    </a>
+
+                    {/*<a href="#" className="current-page">*/}
+                    {/*    <span className="text-style-pagination text-color-white text-inside-btn">1</span>*/}
+                    {/*</a>*/}
+                    {/*<a href="#" className="">*/}
+                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">2</span>*/}
+                    {/*</a>*/}
+                    {/*<a href="#" className="">*/}
+                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">3</span>*/}
+                    {/*</a>*/}
+                    {/*<a href="#" className="">*/}
+                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">...</span>*/}
+                    {/*</a>*/}
+                    {/*<a href="#" className="">*/}
+                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">15</span>*/}
+                    {/*</a>*/}
+                    {/*<a href="#" className="btn-next">*/}
+                    {/*    <span className="next">&nbsp;</span>*/}
+                    {/*</a>*/}
                 </div>
                 <h4 className="pagination-text text-style-400-14 text-color-dark75">1 – 12 из 100+ вариантов
                     аренды</h4>

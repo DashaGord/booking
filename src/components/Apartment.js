@@ -5,7 +5,7 @@ import Carousel from "nuka-carousel";
 class Apartment extends React.Component {
     constructor(props) {
         super(props);
-        this.appModel = props.appModel;
+            this.appModel = props.appModel;
     }
 
 
@@ -27,8 +27,8 @@ class Apartment extends React.Component {
             <div className="apartment-card_inside">
                 <div className="apartment-img">
                     <Carousel>
-                        {this.appModel.images.map(a => (
-                            <img src={"./apartments/" + a + ".png"}/>
+                        {this.appModel.images.map((a, i) => (
+                            <img key={i} src={"./apartments/" + a + ".png"}/>
                         ))}
                     </Carousel>
                     <img className="apartment-arrow-left" src="./iconcs/arrow_left.svg" alt="arrow_left"/>

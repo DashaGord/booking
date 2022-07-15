@@ -1,5 +1,5 @@
 import React from 'react';
-import Apartment from "../components/Apartment/Apartment";
+import Apartment from "../components/Apartment";
 
 const SearchForm = () => {
     return (

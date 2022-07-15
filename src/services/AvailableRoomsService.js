@@ -1,9 +1,12 @@
 import {AppModel} from "../Model/AppModel";
 import {AvailableRoomsModel} from "../Model/AvailableRoomsModel";
 
-class AvailableRoomsService {
 
-    getResource = async (url) => {
+
+class AvailableRoomsService {
+    _baseSkip = 0;
+
+        getResource = async (url) => {
         let res = await fetch(url);
 
         if (!res.ok) {
@@ -13,8 +16,8 @@ class AvailableRoomsService {
         return await res.json();
     }
 
-    getAvailableRooms = async () => {
-        const res = await this.getResource(`http://localhost:8000/available_rooms/?date_in=2022-07-7&date_out=2022-07-11&price_from=1000&price_to=30000&skip=0`);
+    getAvailableRooms = async (skip = this._baseSkip) => {
+        const res = await this.getResource(`http://localhost:8000/available_rooms/?date_in=2022-07-7&date_out=2022-07-11&price_from=1000&price_to=30000&skip=${skip}`);
         let count = res.count;
         let rooms = res.available_rooms.map(room => {
             return new AppModel(room.id, room.images, room.stars, room.avg_price)
