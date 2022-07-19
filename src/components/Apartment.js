@@ -2,14 +2,10 @@ import React from 'react';
 import Carousel from "nuka-carousel";
 
 
-class Apartment extends React.Component {
-    constructor(props) {
-        super(props);
-            this.appModel = props.appModel;
-    }
+const Apartment = (props) => {
 
 
-    getStars(stars) {
+    function getStars(stars) {
         let content = []
         for (let i = 0; i < stars; i++) {
             content.push(<img src="./iconcs/star.png" alt=""/>);
@@ -22,12 +18,11 @@ class Apartment extends React.Component {
     }
 
 
-    render() {
-        return <div className="apartment-card">
+    return (<div className="apartment-card">
             <div className="apartment-card_inside">
                 <div className="apartment-img">
                     <Carousel>
-                        {this.appModel.images.map((a, i) => (
+                        {props.appModel.images.map((a, i) => (
                             <img key={i} src={"./apartments/" + a + ".png"}/>
                         ))}
                     </Carousel>
@@ -35,23 +30,25 @@ class Apartment extends React.Component {
                     <img className="apartment-arrow-right" src="./iconcs/arrow_right.svg" alt="arrow_right"/>
                 </div>
                 <div className="apartment-card_info">
-                    <div className="number text-style-700-14-17 text-color-dark">№ {this.appModel.id}</div>
-                    <div className="price text-style-700-14 text-color-dark50">{this.appModel.avg_price}₽ <span
+                    <div className="number text-style-700-14-17 text-color-dark">№ {props.appModel.id}</div>
+                    <div className="price text-style-700-14 text-color-dark50">{props.appModel.avg_price}₽ <span
                         className="text-style-400 text-color-dark50 none-transform">в сутки</span></div>
                     <div className="line-card"><img src="./iconcs/line.svg" alt=""/></div>
                     <div className="star">
                         <div className="rating-mini">
                             {
-                                this.getStars(this.appModel.stars)
+                                getStars(props.appModel.stars)
                             }
                         </div>
                     </div>
-                    <div className="comments text-style-700-14 text-color-dark50">{this.appModel.comments} <span
+                    <div className="comments text-style-700-14 text-color-dark50">{props.appModel.comments} <span
                         className="text-style-400 text-color-dark50 none-transform">Отзывов</span></div>
                 </div>
             </div>
-        </div>;
-    }
+        </div>
+    )
+
 }
 
-export default Apartment;
+export {Apartment};
+

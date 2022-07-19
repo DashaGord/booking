@@ -1,28 +1,39 @@
-import React, {Component} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import AvailableRoomsService from "../services/AvailableRoomsService";
-import ModelPagination from "../components/Pagination/ModelPagination";
-import ApartmentsList from "../components/ApartmentsList";
+import {ModelPagination} from "../components/Pagination/ModelPagination";
+import {ApartmentsList} from "../components/ApartmentsList";
+import {AvailableRoomsModel} from "../Model/AvailableRoomsModel";
+import {useLocation} from "react-router-dom";
 
+// export function fetchAvailableRooms(skip) {
+//     availableRoomsService.getAvailableRooms(skip).then(res => {
+//         setData(res);
+//     })
+// }
+
+
+export const DataContext = createContext();
 
 const availableRoomsService = new AvailableRoomsService();
 
-class TestPage extends Component {
-    constructor(props) {
-        super(props);
-        this.appListRef = React.createRef();
-        this.paginationRef = React.createRef();
+const TestPage = () => {
+    const [data, setData] = useState(new AvailableRoomsModel(0, []));
+    const location = useLocation();
+    const usp = new URLSearchParams(location.search);
+    let skip = usp.get('skip');
+
+    function fetchAvailableRooms(skip) {
+        availableRoomsService.getAvailableRooms(skip).then(res => {
+            setData(res);
+        })
     }
 
-    componentDidMount() {
-        availableRoomsService.getAvailableRooms().then(res => {
-            this.appListRef.current.setState({apartments: res.appModels});
-            const count = res.count;
-            this.paginationRef.current.setState({count: count});
-        });
-    }
+    useEffect(() => {
+        fetchAvailableRooms(skip);
+    }, [location]);
 
-    render() {
-        return <section id="section--search">
+    return (
+        <section id="section--search">
             <aside>
                 <form action="" className="search-filter">
 
@@ -182,39 +193,16 @@ class TestPage extends Component {
             <div className="catalog-apartments">
                 <h2 className="text-color-dark text-style-700 header-catalog">Номера, которые мы для вас
                     подобрали</h2>
-                <ApartmentsList ref={this.appListRef}/>
-
-
-                <div id="pagination">
-                    <ModelPagination ref={this.paginationRef}/>
-
-
-                    {/*<a href="#" className="current-page">*/}
-                    {/*    <span className="text-style-pagination text-color-white text-inside-btn">1</span>*/}
-                    {/*</a>*/}
-                    {/*<a href="#" className="">*/}
-                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">2</span>*/}
-                    {/*</a>*/}
-                    {/*<a href="#" className="">*/}
-                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">3</span>*/}
-                    {/*</a>*/}
-                    {/*<a href="#" className="">*/}
-                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">...</span>*/}
-                    {/*</a>*/}
-                    {/*<a href="#" className="">*/}
-                    {/*    <span className="text-style-pagination text-color-dark50 text-inside-btn">15</span>*/}
-                    {/*</a>*/}
-                    {/*<a href="#" className="btn-next">*/}
-                    {/*    <span className="next">&nbsp;</span>*/}
-                    {/*</a>*/}
-                </div>
-                <h4 className="pagination-text text-style-400-14 text-color-dark75">1 – 12 из 100+ вариантов
-                    аренды</h4>
+                <DataContext.Provider value={data}>
+                    <ApartmentsList/>
+                    <ModelPagination/>
+                </DataContext.Provider>
             </div>
             <hr className="line-end"/>
 
         </section>
-    };
+    )
+
 }
 
-export default TestPage;
+export {TestPage};
