@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import {DataContext} from "../../pages/test";
 import { Link } from "react-router-dom";
 import {useLocation} from "react-router-dom";
-import {TestPage} from "../../pages/test";
 
 const ModelPagination = () => {
     const skipQty = 12;
@@ -67,38 +66,3 @@ const ModelPagination = () => {
     )
 }
 export {ModelPagination};
-
-/**
- * {this.state.currentPage !== 1 &&
- *                     <a href="#" className="">
- *                         <span className="text-style-pagination text-inside-btn">1</span>
- *                     </a>
- *                 }
- *                 {this.state.left2 > 2 &&
- *                     <a href="#" className="">
- *                         <span className="text-style-pagination text-color-dark50 text-inside-btn">...</span>
- *                     </a>
- *                 }
- *                 {arrayLeft.map((num) => <a href="#" className="">
- *                         <span className="text-style-pagination text-color-dark50 text-inside-btn">{num}</span>
- *                     </a>
- *                 )}
- *                 <a href="#" className="current-page">
- *                     <span
- *                         className="text-style-pagination text-color-white text-inside-btn">{this.state.currentPage}</span>
- *                 </a>
- *                 {arrayRight.map((num) => <a href="#" className="">
- *                         <span className="text-style-pagination text-color-dark50 text-inside-btn">{num}</span>
- *                     </a>
- *                 )}
- *                 {this.state.right2 > 2 &&
- *                     <a href="#" className="">
- *                         <span className="text-style-pagination text-color-dark50 text-inside-btn">...</span>
- *                     </a>
- *                 }
- *                 {this.state.lastPage !== 1 && this.state.lastPage !== this.state.currentPage &&
- *                     <a href="#" className="">
- *                         <span className="text-style-pagination text-color-white text-inside-btn">1</span>
- *                     </a>
- *                 }
- */

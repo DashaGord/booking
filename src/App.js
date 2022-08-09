@@ -4,7 +4,7 @@ import App_header from './components/App_header/App_header';
 import App_footer from './components/App_footer/App_footer';
 import {BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
-import Home from './pages';
+import Home from './pages/Home';
 import ApartmentPage from './pages/apartment-page';
 import SearchForm from './pages/SearchForm';
 import Login from './pages/login';

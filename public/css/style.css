@@ -139,6 +139,10 @@ body{
 .btn-radius {
     border-radius: 22px;
 }
+.btn-radius-1 {
+    border-radius: 22px;
+    border: #FFFFFF;
+}
 .white-btn-cover {
     height: 30px;
     background: white center;
