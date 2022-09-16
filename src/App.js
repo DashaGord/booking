@@ -6,10 +6,10 @@ import {BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages/Home';
 import ApartmentPage from './pages/apartment-page';
-import SearchForm from './pages/SearchForm';
+import {SearchForm} from './pages/SearchForm';
 import Login from './pages/login';
 import Registration from './pages/registration/registration';
-import {TestPage} from './pages/test';
+
 
 
 
@@ -23,7 +23,6 @@ function App() {
                 <Route path='/registration' element={<Registration/>}/>
                 <Route path='/SearchForm' element={<SearchForm/>}/>
                 <Route path='/login' element={<Login/>}/>
-                <Route path='/test' element={<TestPage/>}/>
             </Routes>
             <App_footer/>
         </Router>

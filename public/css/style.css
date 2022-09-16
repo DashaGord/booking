@@ -471,7 +471,6 @@ div.label-radio label {
 
 /*Счетчик*/
 .guests-choice{
-    display: none;
     z-index: 2;
     position: absolute;
     width: 320px;

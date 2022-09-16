@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { createContext } from 'react';
+import {createContext} from 'react';
 import {MyShow} from "../components/MyShow";
 
 export const ContextMyShow = createContext();
@@ -12,10 +12,10 @@ const Home = () => {
     const [dateIn, setDateIn] = useState('');
     const [dateOut, setDateOut] = useState('');
 
-    function showGuest (){
+    function showGuest() {
         if (adults === 2 && children === 1 && baby === 0) {
             return "Сколько гостей";
-        }else {
+        } else {
             return 'взрослые:' + adults + ' дети:' + children + ' младенцы:' + baby;
         }
     }
@@ -40,6 +40,7 @@ const Home = () => {
                             onChange={e => setDateIn(e.target.value)}
                             value={dateIn}
                             className="form-style w-150px text-style-form text-color-dark75 tick"
+                            required={true}
                         />
                     </div>
                     <div className="column">
@@ -51,6 +52,7 @@ const Home = () => {
                             onChange={e => setDateOut(e.target.value)}
                             value={dateOut}
                             className="form-style w-150px text-style-form text-color-dark75 tick"
+                            required={true}
                         />
                     </div>
                 </div>
@@ -60,8 +62,9 @@ const Home = () => {
                         onClick={() => toggleShow(!show)}
                         className="form-style select-tick w-320px text-style-form text-color-dark75 none-transform pad"
                         required="" defaultValue="false">
-                        <span >{showGuest()}</span>
+                        <span>{showGuest()}</span>
                     </div>
+
                     <input
                         id="adults"
                         name="adults"
@@ -84,12 +87,16 @@ const Home = () => {
                         value={baby}
                     />
 
-                    <ContextMyShow.Provider value={{show,toggleShow,adults, setAdults,children, setChildren,baby, setBaby}}>
+
+                    <ContextMyShow.Provider
+                        value={{show, toggleShow, adults, setAdults, children, setChildren, baby, setBaby}}>
                         <MyShow/>
                     </ContextMyShow.Provider>
 
                 </div>
-                <input type="submit" className="btn-radius-1 pink-gradient-btn w-320px h-44px margin-top-31 text-style-700-12-15 text-color-white" value="ПОДОБРАТЬ НОМЕР"/>
+                <input type="submit"
+                       className="btn-radius-1 pink-gradient-btn w-320px h-44px margin-top-31 text-style-700-12-15 text-color-white"
+                       value="ПОДОБРАТЬ НОМЕР"/>
                 {/*<span className="text-style-700-12-15 text-color-white text-inside-btn arrow_forward">ПОДОБРАТЬ НОМЕР</span>*/}
             </form>
             <div className="watermark text-style-400-14 text-color-dark75">Лучшие номера для вашей работы, отдыха и

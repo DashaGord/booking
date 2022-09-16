@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {Apartment} from "./Apartment";
-import {DataContext} from "../pages/test";
+import {DataContext} from "../pages/SearchForm";
 
 
 const ApartmentsList = () => {
